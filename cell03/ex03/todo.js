@@ -18,12 +18,21 @@ function addTodo(text, top = false) {
     const todo = document.createElement("div");
     todo.textContent = text;
 
-    todo.addEventListener("click", function() {
-        if (confirm("Remove this TO DO?")) {
-            todo.remove();
-            saveTodos();
-        }
-    });
+    todo.addEventListener("click", function () {
+    const confirmBox = document.getElementById("confirmBox");
+
+    confirmBox.style.display = "block";
+
+    document.getElementById("yesBtn").onclick = function () {
+        todo.remove();
+        saveTodos();
+        confirmBox.style.display = "none";
+    };
+
+    document.getElementById("noBtn").onclick = function () {
+        confirmBox.style.display = "none";
+    };
+});
 
     if (top) {
         list.prepend(todo);

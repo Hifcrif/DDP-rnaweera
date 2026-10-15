@@ -26,3 +26,14 @@ button {
 #ft_list div:hover {
     background-color: lightpink;
 }
+.modal {
+    display: none;
+    padding: 20px;
+    background: pink;
+    border: 1px solid black;
+}
+
+.modal button {
+    padding: 8px 20px;
+    cursor: pointer;
+}
